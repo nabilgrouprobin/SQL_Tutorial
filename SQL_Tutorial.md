@@ -201,5 +201,27 @@ FROM SQLTutorial..EmployeeDemographics dem
  ON dem.EmployeeId = sal.EmployeeId
 ```
 - FULL OUTER JOIN
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDemographics dem
+FULL OUTER JOIN SQLTutorial..EmployeeSalary sal
+ ON dem.EmployeeId = sal.EmployeeId
+```
+- IF we select any column which have same name in two tables we have to specify in join statement
+```SQL
+SELECT SQLTutorial..EmployeeDemographics.EmployeeId , FirstName, LastName
+FROM SQLTutorial..EmployeeDemographics
+FULL OUTER JOIN SQLTutorial..EmployeeSalary
+ ON SQLTutorial..EmployeeDemographics.EmployeeId = SQLTutorial..EmployeeSalary.EmployeeId
+```
+- we can do it also by aliasing name
+```SQL
+SELECT dem.EmployeeId , FirstName, LastName
+FROM SQLTutorial..EmployeeDemographics dem
+FULL OUTER JOIN SQLTutorial..EmployeeSalary sal
+ ON dem.EmployeeId = sal.EmployeeId
+```
+
+
 
 
