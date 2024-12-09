@@ -40,5 +40,9 @@ SELECT TOP 2 FirstName, LastName
   FROM SQLTutorial..EmployeeDetails
 ```
 - if all rows and column needed then replace column name with *
-- 
+- to select individual values in one column like (Gender, LastName, Age)
+```SQL
+SELECT DISTINCT(Gender)
+  FROM SQLTutorial..EmployeeDetails
+``` 
 
