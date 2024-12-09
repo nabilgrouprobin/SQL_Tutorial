@@ -29,4 +29,10 @@ SELECT *
 FROM EmployeeDetails
 ```
 
+- to select some coloumn (FirstName, LaseName)  from table (EmployeeDetails)
+```SQL
+SELECT FirstName, LastName 
+FROM EmployeeDetails
+```
+
 
