@@ -165,4 +165,10 @@ SELECT *
 FROM SQLTutorial..EmployeeDetails
 ORDER BY Age DESC, Gender DESC
 ```
+- we can also do it by column number
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDetails
+ORDER BY 4 DESC, 5 DESC
+```
 
