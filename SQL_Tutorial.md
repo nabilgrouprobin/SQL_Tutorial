@@ -10,6 +10,6 @@
 )
 ```
 - to hard refresh
-```
+`
 ctrl + shift + R
-```
+`
