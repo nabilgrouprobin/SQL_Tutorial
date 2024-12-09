@@ -52,4 +52,15 @@ SELECT DISTINCT(Gender)
 SELECT COUNT(Gender)
   FROM SQLTutorial..EmployeeDetails
 ```
+- to add a derived column name we use `AS`
+```SQL
+SELECT count(EmployeeID) AS EmployeeIDCount
+  FROM SQLTutorial..EmployeeDetails
+```
+- or
+```SQL
+SELECT DISTINCT(Age) AS IndividualAgeNumber
+  FROM SQLTutorial..EmployeeDetails
+```
+
 
