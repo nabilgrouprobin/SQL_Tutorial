@@ -77,13 +77,13 @@ FROM SQLTutorial..EmployeeDetails
 SELECT AVG(Age)
 FROM SQLTutorial..EmployeeDetails
 ```
------------------------------------------------ SELECT ----------------------------------------------
+----------------------------------------------- FROM ----------------------------------------------
 - to `FROM` keyword we can locate our table initiating through out database name
 ```SQL
 FROM EmployeeDetails 
 FROM SQLTutorial.dbo.EmployeeDetails
 FROM SQLTutorial..EmployeeDetails
 ```
-
+----------------------------------------------- WHERE ----------------------------------------------
 
 
