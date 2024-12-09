@@ -144,4 +144,25 @@ SELECT Gender, COUNT(Gender) AS CountGender
 FROM SQLTutorial..EmployeeDetails
 GROUP BY Gender
 ```
+- we can also add filter in group by statement
+```SQL
+SELECT Gender, COUNT(Gender) AS CountGender
+FROM SQLTutorial..EmployeeDetails
+WHERE Age > 29
+GROUP BY Gender
+```
+- we can set order in query by `ORDER BY` keywords has two method `ASC` or` DESC`
+- default is `ASC`
+```SQL
+SELECT Gender, COUNT(Gender) AS CountGender
+FROM SQLTutorial..EmployeeDetails
+GROUP BY Gender
+ORDER BY CountGender DESC
+```
+- we can do multiple column order
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDetails
+ORDER BY Age DESC, Gender DESC
+```
 
