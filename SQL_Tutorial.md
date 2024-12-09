@@ -23,4 +23,10 @@ INSERT INTO EmployeeDetails VALUES
 ('1004', 'Pan', 'Hook', 35, 'Female')
 ```
 
+- to select all data from a table named EmployeeDetails
+```SQL
+SELECT * 
+FROM EmployeeDetails
+```
+
 
