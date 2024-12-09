@@ -22,7 +22,7 @@ INSERT INTO EmployeeDetails VALUES
 ('1003', 'Pam', 'Beasley', 30, 'Female'),
 ('1004', 'Pan', 'Hook', 35, 'Female')
 ```
-
+----------------------------------------------- SELECT ----------------------------------------------
 - to select all data from a table named EmployeeDetails
 ```SQL
 SELECT * 
@@ -77,6 +77,7 @@ FROM SQLTutorial..EmployeeDetails
 SELECT AVG(Age)
 FROM SQLTutorial..EmployeeDetails
 ```
+----------------------------------------------- SELECT ----------------------------------------------
 - to `FROM` keyword we can locate our table initiating through out database name
 ```SQL
 FROM EmployeeDetails 
