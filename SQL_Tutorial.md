@@ -44,5 +44,10 @@ SELECT TOP 2 FirstName, LastName
 ```SQL
 SELECT DISTINCT(Gender)
   FROM SQLTutorial..EmployeeDetails
-``` 
+```
+-to select rows number without null value in one column(Gender)
+```SQL
+SELECT COUNT(Gender)
+  FROM SQLTutorial..EmployeeDetails
+```
 
