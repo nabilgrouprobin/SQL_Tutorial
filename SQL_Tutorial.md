@@ -85,5 +85,38 @@ FROM SQLTutorial.dbo.EmployeeDetails
 FROM SQLTutorial..EmployeeDetails
 ```
 ----------------------------------------------- WHERE ----------------------------------------------
-
+- to filter data with a criteria (FirstName = 'Abdur')
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDetails
+WHERE FirstName = 'Abdur'
+```
+- some operator
+```
+Equal =
+Not Equal <>
+less than <
+greater than >
+less than equla <=
+greater than equal >=
+```
+- some logical operator
+```
+WHERE Age = 30 AND Gender = 'Female'
+WHERE Age = 30 OR Gender = 'Female' 
+```
+- we use `LIKE` for string operation mainly
+- % (percent): Represents zero, one, or multiple characters.
+- _ (underscore): Represents a single character.
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDetails
+WHERE LastName LIKE 'R%'
+```
+- we can also use `NOT LIKE`
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDetails
+WHERE LastName NOT LIKE 'R%'
+```
 
