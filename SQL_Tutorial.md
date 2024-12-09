@@ -15,4 +15,12 @@
 INSERT INTO EmployeeDetails VALUES 
 ('1001', 'Jim', 'Halpert', 30, 'Male')
 ```
+- to insert multiple values
+```SQL
+INSERT INTO EmployeeDetails VALUES 
+('1002', 'Abdur', 'Rouf', 29, 'Male'),
+('1003', 'Pam', 'Beasley', 30, 'Female'),
+('1004', 'Pan', 'Hook', 35, 'Female')
+```
+
 
