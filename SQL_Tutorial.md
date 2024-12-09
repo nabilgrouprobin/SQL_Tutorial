@@ -79,8 +79,10 @@ FROM SQLTutorial..EmployeeDetails
 ```
 - to `FROM` keyword we can locate our table initiating through out database name
 ```SQL
-FROM EmployeeDetails  --->> FROM SQLTutorial.dbo.EmployeeDetails --->> FROM SQLTutorial..EmployeeDetails
-``
+FROM EmployeeDetails 
+FROM SQLTutorial.dbo.EmployeeDetails
+FROM SQLTutorial..EmployeeDetails
+```
 
 
 
