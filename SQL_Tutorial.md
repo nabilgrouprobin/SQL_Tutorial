@@ -62,5 +62,21 @@ SELECT count(EmployeeID) AS EmployeeIDCount
 SELECT DISTINCT(Age) AS IndividualAgeNumber
   FROM SQLTutorial..EmployeeDetails
 ```
+- to show maximum value in column(Age)
+```SQL
+SELECT MAX(Age)
+FROM SQLTutorial..EmployeeDetails
+```
+- to show minimum value in column(Age)
+```SQL
+SELECT MIN(Age)
+FROM SQLTutorial..EmployeeDetails
+```
+- to show average value in column(Age)
+```SQL
+SELECT AVG(Age)
+FROM SQLTutorial..EmployeeDetails
+```
+
 
 
