@@ -10,3 +10,9 @@
 )
 ```
 - to hard refresh   ` ctrl + shift + R `
+- to insert data
+```SQL
+INSERT INTO EmployeeDetails VALUES 
+('1001', 'Jim', 'Halpert', 30, 'Male')
+```
+
