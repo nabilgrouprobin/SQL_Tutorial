@@ -41,11 +41,13 @@ SELECT TOP 2 FirstName, LastName
 ```
 - if all rows and column needed then replace column name with *
 - to select individual values in one column like (Gender, LastName, Age)
+- DISTINCT shows `NULL` and `0` also
 ```SQL
 SELECT DISTINCT(Gender)
   FROM SQLTutorial..EmployeeDetails
 ```
--to select rows number without null value in one column(Gender)
+- to select rows number without null value in one column(Gender)
+- COUNT ignore `NULL` bt counts `0` in counting
 ```SQL
 SELECT COUNT(Gender)
   FROM SQLTutorial..EmployeeDetails
