@@ -119,4 +119,16 @@ SELECT *
 FROM SQLTutorial..EmployeeDetails
 WHERE LastName NOT LIKE 'R%'
 ```
+- we can filter `NULL` values through WHERE statement
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDetails
+WHERE EmployeeID is NULL
+```
+- we can also use `NOT NULL`
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDetails
+WHERE EmployeeID is NOT NULL
+```
 
