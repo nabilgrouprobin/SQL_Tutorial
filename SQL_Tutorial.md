@@ -131,4 +131,17 @@ SELECT *
 FROM SQLTutorial..EmployeeDetails
 WHERE EmployeeID is NOT NULL
 ```
+- we use `IN` for like equal statement bt it is multiple equal statement
+```
+SELECT *
+FROM SQLTutorial..EmployeeDetails
+WHERE FirstName IN ('Rayem', 'Abdur')
+```
+-----------------------------------------Group By , Order By --------------------------------------
+- to Group By Gender in Gender column and count it
+```SQL
+SELECT Gender, COUNT(Gender) AS CountGender
+FROM SQLTutorial..EmployeeDetails
+GROUP BY Gender
+```
 
