@@ -9,3 +9,7 @@
 	Gender varchar(50)
 )
 ```
+- to hard refresh
+```
+ctrl + shift + R
+```
