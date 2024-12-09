@@ -29,10 +29,16 @@ SELECT *
 FROM EmployeeDetails
 ```
 
-- to select some coloumn (FirstName, LaseName)  from table (EmployeeDetails)
+- to select some coloumn (FirstName, LastName)  from table (EmployeeDetails)
 ```SQL
 SELECT FirstName, LastName 
 FROM EmployeeDetails
 ```
-
+- to select top 2 values from table(EmployeeDetails) with column (FirstName, LastName)
+```SQL
+SELECT TOP 2 FirstName, LastName
+  FROM SQLTutorial..EmployeeDetails
+```
+- if all rows and column needed then replace column name with *
+- 
 
