@@ -181,10 +181,10 @@ JOIN SQLTutorial..EmployeeSalary sal
  ON dem.EmployeeId = sal.EmployeeId
 ```
 - Types of JOIN
- - INNER
- - LEFT OUTER
- - RIGHT OUTER
- - FULL OUTER
+ 	-- INNER
+ 	-- LEFT OUTER
+ 	-- RIGHT OUTER
+ 	-- FULL OUTER
 - Examples :
 - LEFT OUTER JOIN
 ```SQL
