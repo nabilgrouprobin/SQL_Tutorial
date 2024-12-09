@@ -137,7 +137,7 @@ SELECT *
 FROM SQLTutorial..EmployeeDetails
 WHERE FirstName IN ('Rayem', 'Abdur')
 ```
------------------------------------------Group By , Order By --------------------------------------
+----------------------------------------- Group By , Order By --------------------------------------
 - to Group By Gender in Gender column and count it
 ```SQL
 SELECT Gender, COUNT(Gender) AS CountGender
@@ -171,4 +171,35 @@ SELECT *
 FROM SQLTutorial..EmployeeDetails
 ORDER BY 4 DESC, 5 DESC
 ```
+----------------------------------------- JOIN ------------------------------------------------------
+- join is to combine multiple tables
+- `JOIN` denotes `INNER JOIN`
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDemographics dem
+JOIN SQLTutorial..EmployeeSalary sal
+ ON dem.EmployeeId = sal.EmployeeId
+```
+- Types of JOIN
+ - INNER
+ - LEFT OUTER
+ - RIGHT OUTER
+ - FULL OUTER
+- Examples :
+- LEFT OUTER JOIN
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDemographics dem
+ LEFT OUTER JOIN SQLTutorial..EmployeeSalary sal
+ ON dem.EmployeeId = sal.EmployeeId
+```
+- RIGHT OUTER JOIN
+```SQL
+SELECT *
+FROM SQLTutorial..EmployeeDemographics dem
+ RIGHT OUTER JOIN SQLTutorial..EmployeeSalary sal
+ ON dem.EmployeeId = sal.EmployeeId
+```
+- FULL OUTER JOIN
+
 
