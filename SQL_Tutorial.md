@@ -221,6 +221,23 @@ FROM SQLTutorial..EmployeeDemographics dem
 FULL OUTER JOIN SQLTutorial..EmployeeSalary sal
  ON dem.EmployeeId = sal.EmployeeId
 ```
+- We can use `ORDER BY` and `GROUP BY` in `JOIN` Operator
+```SQL
+SELECT JobTitle, AVG(Salary)
+FROM SQLTutorial.dbo.EmployeeDemographics dem
+FULL OUTER JOIN SQLTutorial..EmployeeSalary sal
+ ON dem.EmployeeId = sal.EmployeeId
+WHERE JobTitle = 'Salesman'
+GROUP BY JobTitle
+```
+----------------------------------------- UNION, UNION ALL -------------------------------------------
+- JOIN AND UNION are simmilar at combining two table and generate one Output.
+- Differences : JOIN combines both table based on a common column (EmployeeId)
+- Differences : UNION combines both table based on nothing
+- UNION is like copy paste
+```SQL
+
+```
 
 
 
