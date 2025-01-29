@@ -235,6 +235,10 @@ GROUP BY JobTitle
 - Differences : JOIN combines both table based on a common column (EmployeeId)
 - Differences : UNION combines both table based on nothing
 - UNION is like copy paste
+- UNION is taking out and removing the duplicates
+- UNION ALL is not removing duplicates
+- UNION works where data types are similar and same number of columns
+- 
 ```SQL
 
 ```
