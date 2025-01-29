@@ -271,7 +271,7 @@ CASE
 	WHEN Department = 'Accounting' THEN Salary + (Salary * 0.5)
 	WHEN Department = 'HR' THEN Salary + (Salary * 0.2)
 	ELSE Salary + (Salary * 0.1)
-END
+END AS SalaryAfterRaise
 FROM DBO.EmployeeDetails
 JOIN DBO.EmployeeSalary ON DBO.EmployeeDetails.EmployeeID = DBO.EmployeeSalary.EmployeeID
 ```
