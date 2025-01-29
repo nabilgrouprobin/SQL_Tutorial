@@ -238,20 +238,32 @@ GROUP BY JobTitle
 - UNION is taking out and removing the duplicates
 - UNION ALL is not removing duplicates
 - UNION AND UNION ALL works where data types are similar and same number of columns
-- SAME DATA TYPE AND SAME NUMBER OF COLUMN
+- Same data type and same number of column
 - UNION
 ```SQL
 SELECT EmployeeID, FirstName, Age FROM dbo.EmployeeDetails
 UNION 
 SELECT * FROM dbo.EmployeeSalary
 ```
--UNION ALL
+- UNION ALL
 ```SQL
 SELECT EmployeeID, FirstName, Age FROM dbo.EmployeeDetails
 UNION ALL
 SELECT * FROM dbo.EmployeeSalary
 ```
-
+---------------------------------------- CASE STATEMENT ---------------------------------
+- Case statement allows you specify condition and specify returns
+- Case statement creates new column
+- If various condition meet then the first one is executed
+```SQL
+SELECT EmployeeID, FirstName, LastName, Age, 
+CASE
+	WHEN Age > 27 AND Age <30 THEN 'MATURE'
+	WHEN Age > 30 THEN 'OLD'
+	ELSE 'BABY'
+END
+FROM DBO.EmployeeDetails
+```
 
 
 
