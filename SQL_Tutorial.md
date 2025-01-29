@@ -279,6 +279,13 @@ JOIN DBO.EmployeeSalary ON DBO.EmployeeDetails.EmployeeID = DBO.EmployeeSalary.E
 - AN aggregate may not appear in the WHERE clause
 - so we use Having
 - HAVING Statement is completely depended on GROUP BY Statement So it is going under GROUP BY statement
+```SQL
+SELECT Age,  COUNT(Age)
+FROM dbo.EmployeeDetails ed
+GROUP BY Age
+HAVING COUNT(Age) > 1
+
+```
 
 
 
