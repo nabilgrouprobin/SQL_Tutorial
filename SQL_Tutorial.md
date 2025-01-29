@@ -294,6 +294,23 @@ GROUP BY Age
 HAVING AVG(Salary) > 25
 ORDER BY AVG(Salary)
 ```
-
+------------------------------ UPDATE AND DELETE/REMOVE DATA ---------------------------------
+- NORMAL QUERY
+```SQL
+UPDATE dbo.EmployeeSalary
+SET Salary = 35000
+WHERE EmployeeID = 1004
+```
+- MULTIPLE VALUE UPDATE
+```SQL
+UPDATE dbo.EmployeeSalary
+SET Salary = 35000, Department = 'Admin'
+WHERE EmployeeID = 1004
+```
+- DELETE
+```SQL
+DELETE dbo.EmployeeDetails
+WHERE EmployeeID = 1004
+```
 
 
