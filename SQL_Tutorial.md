@@ -264,6 +264,17 @@ CASE
 END
 FROM DBO.EmployeeDetails
 ```
+- AND
+```SQL
+SELECT DBO.EmployeeDetails.EmployeeID, FirstName, LastName, Department, Salary, 
+CASE
+	WHEN Department = 'Accounting' THEN Salary + (Salary * 0.5)
+	WHEN Department = 'HR' THEN Salary + (Salary * 0.2)
+	ELSE Salary + (Salary * 0.1)
+END
+FROM DBO.EmployeeDetails
+JOIN DBO.EmployeeSalary ON DBO.EmployeeDetails.EmployeeID = DBO.EmployeeSalary.EmployeeID
+```
 
 
 
