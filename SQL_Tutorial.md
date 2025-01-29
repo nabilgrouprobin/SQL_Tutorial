@@ -284,7 +284,15 @@ SELECT Age,  COUNT(Age)
 FROM dbo.EmployeeDetails ed
 GROUP BY Age
 HAVING COUNT(Age) > 1
-
+```
+- AND
+```SQL
+SELECT  Age,  AVG(Salary)
+FROM dbo.EmployeeDetails ed
+JOIN dbo.EmployeeSalary es ON ed.EmployeeID = es.EmployeeID
+GROUP BY Age
+HAVING AVG(Salary) > 25
+ORDER BY AVG(Salary)
 ```
 
 
