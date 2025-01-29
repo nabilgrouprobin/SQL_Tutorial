@@ -275,6 +275,10 @@ END AS SalaryAfterRaise
 FROM DBO.EmployeeDetails
 JOIN DBO.EmployeeSalary ON DBO.EmployeeDetails.EmployeeID = DBO.EmployeeSalary.EmployeeID
 ```
+----------------------------------- HAVING -----------------------------------------
+- AN aggregate may not appear in the WHERE clause
+- so we use Having
+- HAVING Statement is completely depended on GROUP BY Statement So it is going under GROUP BY statement
 
 
 
