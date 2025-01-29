@@ -312,5 +312,10 @@ WHERE EmployeeID = 1004
 DELETE dbo.EmployeeDetails
 WHERE EmployeeID = 1004
 ```
-
-
+----------------------------------- ALIASING -----------------------------------------
+- use for readability of SQL
+- we can use as or ''
+```SQL
+SELECT FirstName + ' '+ LastName as FullName
+FROM dbo.EmployeeDetails
+```
