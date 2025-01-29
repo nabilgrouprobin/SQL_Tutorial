@@ -237,10 +237,19 @@ GROUP BY JobTitle
 - UNION is like copy paste
 - UNION is taking out and removing the duplicates
 - UNION ALL is not removing duplicates
-- UNION works where data types are similar and same number of columns
-- 
+- UNION AND UNION ALL works where data types are similar and same number of columns
+- SAME DATA TYPE AND SAME NUMBER OF COLUMN
+- UNION
 ```SQL
-
+SELECT EmployeeID, FirstName, Age FROM dbo.EmployeeDetails
+UNION 
+SELECT * FROM dbo.EmployeeSalary
+```
+-UNION ALL
+```SQL
+SELECT EmployeeID, FirstName, Age FROM dbo.EmployeeDetails
+UNION ALL
+SELECT * FROM dbo.EmployeeSalary
 ```
 
 
