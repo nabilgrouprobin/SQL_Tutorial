@@ -333,5 +333,7 @@ FROM dbo.EmployeeSalary
 ```
 - Aliasing Table Name
 ```SQL
-
+SELECT sal.EmployeeID,  Salary
+FROM dbo.EmployeeSalary as sal
+JOIN dbo.EmployeeDetails as det ON sal.EmployeeID = det.EmployeeID
 ```
