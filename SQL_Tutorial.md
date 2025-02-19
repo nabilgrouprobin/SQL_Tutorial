@@ -363,6 +363,38 @@ FROM dbo.EmployeeSalary as sal
 JOIN dbo.EmployeeDetails as det ON sal.EmployeeID = det.EmployeeID
 GROUP BY Gender
 ```
+-------------------------------- CTEs --------------------------------------------------------
+- Common Table Expression
+- use to manupulate complex subquery data
+- very much like subquery
+- CTE is called WITH Query
+```SQL
+WITH CTE_Employee as 
+(
+	SELECT FirstName, LastName, Gender, Salary,
+	COUNT(Gender) OVER (PARTITION BY gender) as totalGender,
+	AVG(Salary) OVER (PARTITION BY gender) as AvgSalary
+	FROM dbo.EmployeeDetails det
+	JOIN dbo.EmployeeSalary sal ON det.EmployeeID = sal.EmployeeID
+	WHERE Age > 29
+)
+SELECT * 
+FROM CTE_Employee
+```
+-------------------------------- Temp Tables --------------------------------------------
+- temp tables is temporary tables
+```SQL
+CREATE TABLE #temp_Employee (
+EmployeeID int,
+JobTitle varchar(100),
+Salary int
+)
+INSERT INTO #temp_Employee VALUES (
+'1001', 'HR', '45000'
+)
+SELECT * 
+FROM #temp_Employee
+```
 
 
 
