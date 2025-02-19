@@ -337,3 +337,37 @@ SELECT sal.EmployeeID,  Salary
 FROM dbo.EmployeeSalary as sal
 JOIN dbo.EmployeeDetails as det ON sal.EmployeeID = det.EmployeeID
 ```
+---------------------------------------- Partition By -----------------------------------------
+- group by statement is going to reduce the number of rows in our output by rolling them up with some calculation 
+- Aggregates data into summary rows (one row per group)
+- Used with aggregate functions like SUM(), COUNT(), AVG(), MAX(), MIN().
+- Divides the result set into partitions without reducing the number of rows
+- Used with window functions like ROW_NUMBER(), RANK(), SUM() OVER(), etc
+- Use GROUP BY when you want fewer rows with aggregated results.
+- Use PARTITION BY when you want all rows with group-wise calculations
+```SQL
+SELECT FirstName, LastName, Gender, Salary, 
+COUNT(Gender) OVER (PARTITION BY Gender) as TotalGender 
+FROM dbo.EmployeeSalary as sal
+JOIN dbo.EmployeeDetails as det ON sal.EmployeeID = det.EmployeeID
+
+SELECT FirstName, LastName, Gender, Salary, 
+COUNT(Gender) as TotalGender 
+FROM dbo.EmployeeSalary as sal
+JOIN dbo.EmployeeDetails as det ON sal.EmployeeID = det.EmployeeID
+GROUP BY FirstName, LastName, Gender, Salary
+
+SELECT  Gender, 
+COUNT(Gender) as TotalGender 
+FROM dbo.EmployeeSalary as sal
+JOIN dbo.EmployeeDetails as det ON sal.EmployeeID = det.EmployeeID
+GROUP BY Gender
+```
+
+
+
+
+
+
+
+
