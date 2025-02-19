@@ -312,10 +312,26 @@ WHERE EmployeeID = 1004
 DELETE dbo.EmployeeDetails
 WHERE EmployeeID = 1004
 ```
+- please before DELETE statement use SELECT statement to show what do you want to delete.
 ----------------------------------- ALIASING -----------------------------------------
 - use for readability of SQL
-- we can use as or ''
+- temporary changing the column name or table name
+- we can use as or ' '
 ```SQL
 SELECT FirstName + ' '+ LastName as FullName
 FROM dbo.EmployeeDetails
+```
+- or
+```SQL
+SELECT FirstName + ' ' + LastName FullName
+FROM dbo.EmployeeDetails
+```
+- we use aliasing when we use aggregate function
+```SQL
+SELECT AVG(Salary) as AvgSalary
+FROM dbo.EmployeeSalary
+```
+- Aliasing Table Name
+```SQL
+
 ```
