@@ -601,6 +601,8 @@ END;
 DROP PROCEDURE ProcedureName;
 
 ```
+----------------------------- Sub Queries ( In the Select, Form, and Where Statement ) ------
+- sub queries is called inner query or nested query 
 
 
 
