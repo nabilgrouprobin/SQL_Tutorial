@@ -477,6 +477,31 @@ END;
 
 EXEC GetAllEmployees;
 ```
+- and
+```SQL
+CREATE PROCEDURE emp_procedure
+AS
+BEGIN
+    Create Table #temp_employee (
+	Department varchar(50),
+	EmployeesPerJob int,
+	AvgAge int,
+	AvgSalary int
+	)
+	INSERT INTO #temp_employee 
+SELECT Department, COUNT(Department), AVG(Age),Avg(Salary)
+FROM dbo.EmployeeSalary sal
+JOIN dbo.EmployeeDetails  det ON sal.EmployeeID = det.EmployeeID
+GROUP BY Department
+
+SELECT * 
+FROM #temp_employee
+
+END
+
+
+EXEC emp_procedure;
+```
 - Example 2: Stored Procedure With Parameters
 ```SQL
 CREATE PROCEDURE GetEmployeeByID
