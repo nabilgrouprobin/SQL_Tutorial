@@ -471,7 +471,7 @@ FROM EmployeeErrors
 CREATE PROCEDURE GetAllEmployees
 AS
 BEGIN
-    SELECT * FROM Employees;
+    SELECT * FROM dbo.EmployeeDetails;
 END;
 
 
