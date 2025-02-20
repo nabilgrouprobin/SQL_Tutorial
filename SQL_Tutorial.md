@@ -602,7 +602,45 @@ DROP PROCEDURE ProcedureName;
 
 ```
 ----------------------------- Sub Queries ( In the Select, Form, and Where Statement ) ------
-- sub queries is called inner query or nested query 
+- sub queries is called inner query or nested query
+```SQL
+Select * 
+From dbo.EmployeeSalary
+
+-- SubQuery in Select
+
+Select sal.EmployeeID, Salary, (Select AVG(Salary) From dbo.EmployeeSalary) as AllAvgSalary
+From dbo.EmployeeDetails det
+JOIN dbo.EmployeeSalary sal On det.EmployeeID = sal.EmployeeID 
+
+-- SubQuery in Partition By
+
+Select sal.EmployeeID, Salary, AVG(Salary) OVER () as AllAvgSalary
+From dbo.EmployeeDetails det
+JOIN dbo.EmployeeSalary sal On det.EmployeeID = sal.EmployeeID
+
+-- Why Group By doesn't work
+
+Select sal.EmployeeID, Salary, AVG(Salary) as AllAvgSalary
+From dbo.EmployeeDetails det
+JOIN dbo.EmployeeSalary sal On det.EmployeeID = sal.EmployeeID
+Group By sal.EmployeeID, Salary
+Order by 1, 2
+
+-- Subquery in Form Statement
+
+Select a.EmployeeID, a.AllAvgSalary 
+From (Select EmployeeID, Salary, AVG(Salary) OVER () as AllAvgSalary
+From EmployeeSalary) a
+
+-- Subquery in Where
+
+Select sal.EmployeeID, Salary, sal.Department
+From dbo.EmployeeDetails det
+JOIN dbo.EmployeeSalary sal On det.EmployeeID = sal.EmployeeID
+Where sal.EmployeeID in (Select EmployeeID From dbo.EmployeeSalary 
+Where Age>29)
+```
 
 
 
