@@ -502,6 +502,41 @@ END
 
 EXEC emp_procedure;
 ```
+- modify some
+```SQL
+USE [PRIMARY]
+GO
+/****** Object:  StoredProcedure [dbo].[emp_procedure]    Script Date: 02/20/2025 4:10:52 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[emp_procedure]
+@Department nvarchar(100)
+AS
+BEGIN
+    Create Table #temp_employee (
+	Department varchar(50),
+	EmployeesPerJob int,
+	AvgAge int,
+	AvgSalary int
+	)
+	INSERT INTO #temp_employee 
+SELECT Department, COUNT(Department), AVG(Age),Avg(Salary)
+FROM dbo.EmployeeSalary sal
+JOIN dbo.EmployeeDetails  det ON sal.EmployeeID = det.EmployeeID
+WHERE Department = @Department
+GROUP BY Department
+
+
+SELECT * 
+FROM #temp_employee
+
+END
+
+
+EXEC emp_procedure @Department = 'HR'
+```
 - Example 2: Stored Procedure With Parameters
 ```SQL
 CREATE PROCEDURE GetEmployeeByID
