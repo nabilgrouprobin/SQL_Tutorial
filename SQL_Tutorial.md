@@ -455,7 +455,92 @@ FROM EmployeeErrors
 SELECT LastName, UPPER(LastName)
 FROM EmployeeErrors
 ```
+------------------- Stored Procedures -------------------------------------------------------
+- Stored Procedure is a group of SQL Statement that has been created and stored in the database
+- Stored procedure can accept input parameters
+- Single Stored Procedure can be used over the network by several different users with different input data
+- Reduce the traffic and increase the performance
+- Modified data can automatically updated for all users
+- A Stored Procedure is a precompiled collection of one or more SQL statements stored in the database.
+- Performance: Precompiled and cached, reducing parsing and compilation time.
+- Reusability: Write once and call multiple times.
+- Security: Grant permission to execute procedures without exposing underlying tables.
+- Maintainability: Centralized business logic simplifies updates.
+- Example 1: Simple Stored Procedure Without Parameters
+```SQL
+CREATE PROCEDURE GetAllEmployees
+AS
+BEGIN
+    SELECT * FROM Employees;
+END;
 
+
+EXEC GetAllEmployees;
+```
+- Example 2: Stored Procedure With Parameters
+```SQL
+CREATE PROCEDURE GetEmployeeByID
+    @EmployeeID INT
+AS
+BEGIN
+    SELECT * FROM Employees WHERE EmployeeID = @EmployeeID;
+END;
+
+
+EXEC GetEmployeeByID @EmployeeID = 5;
+
+```
+- Example 3: Stored Procedure With Input and Output Parameters
+```SQL
+CREATE PROCEDURE GetEmployeeName
+    @EmployeeID INT,
+    @EmployeeName NVARCHAR(100) OUTPUT
+AS
+BEGIN
+    SELECT @EmployeeName = EmployeeName FROM Employees WHERE EmployeeID = @EmployeeID;
+END;
+
+DECLARE @Name NVARCHAR(100);
+EXEC GetEmployeeName @EmployeeID = 3, @EmployeeName = @Name OUTPUT;
+PRINT @Name;
+```
+- Example 4: Stored Procedure With Transactions and Error Handling
+```SQL
+CREATE PROCEDURE UpdateEmployeeSalary
+    @EmployeeID INT,
+    @NewSalary DECIMAL(10,2)
+AS
+BEGIN
+    BEGIN TRY
+        BEGIN TRANSACTION;
+        
+        UPDATE Employees
+        SET Salary = @NewSalary
+        WHERE EmployeeID = @EmployeeID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        PRINT 'Error occurred while updating salary.';
+    END CATCH
+END;
+
+```
+
+- Modifying and Dropping Stored Procedures
+```SQL
+-- Modify a stored procedure
+ALTER PROCEDURE ProcedureName
+AS
+BEGIN
+    -- Updated SQL code
+END;
+
+-- Drop a stored procedure
+DROP PROCEDURE ProcedureName;
+
+```
 
 
 
