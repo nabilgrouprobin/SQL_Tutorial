@@ -416,6 +416,45 @@ FROM #Temp_Employee2
 ```
 --------------------- STRING FUNCTION ----------------------------------------------------
 - TRIM, LTRIM, RTRIM, REPLACE, SUBSTRING, UPPER, LOWER
+```SQL
+CREATE TABLE EmployeeErrors (
+EmployeeID varchar(50),
+FirstName varchar(50),
+LastName varchar(50)
+)
+
+INSERT INTO EmployeeErrors VALUES
+('1001   ', 'Jimbo', 'Halbert'),
+('  1002','Pamela', 'Basely'),
+('1005', 'T0by', 'Flenderson - Fired' )
+
+SELECT * 
+FROM EmployeeErrors
+
+SELECT EmployeeID, TRIM(EmployeeID) as IDTRIM
+FROM EmployeeErrors
+
+SELECT EmployeeID, LTRIM(EmployeeID) as IDTRIM
+FROM EmployeeErrors
+
+SELECT EmployeeID, RTRIM(EmployeeID) as IDTRIM
+FROM EmployeeErrors
+
+SELECT LastName, REPLACE(LastName, '- Fired', '') as LastNameFixed
+FROM EmployeeErrors
+
+SELECT FirstName, SUBSTRING(FirstName, 1, 3) as Substring
+FROM EmployeeErrors
+
+SELECT FirstName, SUBSTRING(FirstName, 3, 3) as Substring
+FROM EmployeeErrors
+
+SELECT LastName, LOWER(LastName)
+FROM EmployeeErrors
+
+SELECT LastName, UPPER(LastName)
+FROM EmployeeErrors
+```
 
 
 
