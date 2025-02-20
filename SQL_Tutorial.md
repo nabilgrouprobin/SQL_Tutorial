@@ -395,6 +395,28 @@ INSERT INTO #temp_Employee VALUES (
 SELECT * 
 FROM #temp_Employee
 ```
+- we use if exists statement to more efficient
+```SQL
+DROP TABLE IF EXISTS #Temp_Employee2
+CREATE TABLE #Temp_Employee2 (
+JobTitle varchar(50),
+EmployeesPerJob int,
+AvgAge int,
+AvgSalary int
+	)
+
+INSERT INTO #Temp_Employee2 
+SELECT Department, COUNT(Department), AVG(Age),Avg(Salary)
+FROM dbo.EmployeeSalary sal
+JOIN dbo.EmployeeDetails  det ON sal.EmployeeID = det.EmployeeID
+GROUP BY Department
+
+SELECT * 
+FROM #Temp_Employee2
+```
+--------------------- STRING FUNCTION ----------------------------------------------------
+- TRIM, LTRIM, RTRIM, REPLACE, SUBSTRING, UPPER, LOWER
+
 
 
 
